@@ -19,8 +19,9 @@ export default function Home({posts}:{posts:{node:Post}[]}) {
         </div>
         <div className='lg:col-span-4 col-span-1'>
           <div className='lg:sticky relative top-8'> 
-          <Categories />
           <PostWidget />
+          <Categories />
+          
 
           </div>
 

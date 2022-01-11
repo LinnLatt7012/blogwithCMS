@@ -1,6 +1,9 @@
 import { type } from "os"
-
- type Photo = {url: string | null}
+export type Category = {
+   name:String,
+   slug:String
+}
+ export type Photo = {url: string}
  type Author={
     bio: string | null,
     name:string,
@@ -14,5 +17,5 @@ import { type } from "os"
         slug:string,
         excerpt:string,
         featuredImage:Photo,
-        categories:[]
+        categories:Category[]
 }
