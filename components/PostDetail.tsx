@@ -78,7 +78,7 @@ const PostDetail = ({post}:{post:Post&{content:{raw:{children:[]}}}}) => {
                 // console.log(Object.keys(item),"text", item)
                 // console.log("return  ",getContentFragment(itemindex, item.text, item))
                 if(item.href){
-                    console.log(item.children[0].text)
+                    // console.log(item.children[0].text)
                     return getContentFragment(itemindex, item.children[0].text, item)
                 }
                 return getContentFragment(itemindex, item.text, item) 
