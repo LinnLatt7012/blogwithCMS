@@ -18,6 +18,7 @@ const Header = () => {
                         <span className='cursor-pointer font-bold text-4xl text-white'>
                             GraphCMS
                         </span>
+                        
                     </Link>
                 </div>
                 <div className="hidden md:float-lef md:contents">
