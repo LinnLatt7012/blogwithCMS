@@ -103,11 +103,7 @@ export const getSimilarPosts = async (categories, slug) => {
   
     return result.posts;
   };
-  
-    return result.postsConnection.edges;
 
-    
-}
   export const getRecentPosts = async () => {
     const query = gql`
       query GetPostDetails() {
