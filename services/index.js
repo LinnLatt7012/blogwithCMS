@@ -105,7 +105,11 @@ export const getSimilarPosts = async (categories, slug) => {
   
     return result.posts;
   };
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 0353fbdd9965a1eedc4ef9bd6aa8f1f45412e9d1
   export const getRecentPosts = async () => {
     const query = gql`
       query GetPostDetails() {
