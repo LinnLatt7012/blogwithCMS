@@ -3,9 +3,8 @@ import React from 'react'
 import { Categories, PostWidget, Author, Comments, CommentsForm,PostDetail } from '../../components';
 import { getPosts, getPostDetails } from '../../services';
 import { Post } from '../../types/global';
-const PostDetails = ({post}:{post:Post&{}}) => {
+const PostDetails = ({post}:{post:Post&{content:{raw:{children:[]}}}}) => {
     const router = useRouter();
-
   if (router.isFallback) {
     // return <Loader />;
   }
@@ -34,6 +33,7 @@ const PostDetails = ({post}:{post:Post&{}}) => {
 }
 export async function getStaticProps({ params }) {
     const data = await getPostDetails(params.slug);
+    console.log(data)
     return {
       props: {
         post: data,
