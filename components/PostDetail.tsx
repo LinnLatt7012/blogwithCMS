@@ -3,10 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import {Post} from '../types/global'
-const PostCard = (
-    { post }: {post:Post}
-    ) => {
-        // console.log("postcard",post)
+
+const PostDetail = ({post}:{post:Post}) => {
     return (
         <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
             {/*<div className="relative shadow-md inline-block w-full h-60 lg:h-80 mb-6">
@@ -63,4 +61,4 @@ const PostCard = (
     )
 }
 
-export default PostCard
+export default PostDetail
