@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { getCategories } from '../services';
 type Category = {
-    name:String,
+    name:string,
     slug:String
 }
 // const categories:Category[] = [
