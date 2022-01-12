@@ -2,6 +2,7 @@ import Head from 'next/head'
 import {PostCard,PostWidget,Categories} from '../components'
 import {getPosts } from '../services'
 import {Post} from '../types/global'
+import FeaturedPosts from '../sections/FeaturedPosts'
 
 
 export default function Home({posts}:{posts:{node:Post}[]}) {
@@ -11,6 +12,7 @@ export default function Home({posts}:{posts:{node:Post}[]}) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <FeaturedPosts />
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
         <div className='lg:col-span-8 col-span-1'>
           {posts.map((post,index)=>(
@@ -33,9 +35,8 @@ export default function Home({posts}:{posts:{node:Post}[]}) {
   )
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
   const posts =( await getPosts()) ||[]
-
   return {
     props: { posts }
   }
