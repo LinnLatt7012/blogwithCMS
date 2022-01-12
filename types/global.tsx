@@ -4,7 +4,7 @@ export type Category = {
    slug:String
 }
  export type Photo = {url: string}
- type Author={
+ export type Author={
     bio: string | null,
     name:string,
     id:string,
