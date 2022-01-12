@@ -6,7 +6,7 @@ import { Post } from '../../types/global';
 const PostDetails = ({post}:{post:Post&{content:{raw:{children:[]}}}}) => {
     const router = useRouter();
   if (router.isFallback) {
-    // return <Loader />;
+    return <p>Loading</p>;
   }
 
   return (
@@ -33,7 +33,7 @@ const PostDetails = ({post}:{post:Post&{content:{raw:{children:[]}}}}) => {
 }
 export async function getStaticProps({ params }) {
     const data = await getPostDetails(params.slug);
-    // console.log(data)
+    console.log(data)
     return {
       props: {
         post: data,

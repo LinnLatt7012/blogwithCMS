@@ -11,7 +11,7 @@ type Post ={
     createdAt: string,
     slug: string
 }
-const PostWidget = ({categories, slug}:{slug:string | undefined,categories: String[] | undefined}) => {
+const PostWidget = ({categories, slug}:{slug?:string | undefined,categories?: String[] | undefined}) => {
     const [relatedPosts, setRelatedPosts] = useState<Post[]>([])
     useEffect(() => {
         // console.log(categories)

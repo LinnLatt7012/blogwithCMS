@@ -5,22 +5,22 @@ import React from 'react'
 import {Post} from '../types/global'
 
 const PostDetail = ({post}:{post:Post&{content:{raw:{children:[]}}}}) => {
-    const getContentFragment = (index, text:string, obj:Object, type:string) => {
-        let modifiedText = text;
+    const getContentFragment = (index:number, text:string, obj:{bold?:any,italic?:any,underline?:any,href?:any,title?:any,height?:any,width?:any,src?:any}, type?:string) => {
+        let modifiedText:any = text;
 
         if (obj) {
-            if (obj.bold) {
+            if (obj?.bold) {
                 modifiedText = (<span key={index} className="font-semibold">{text}</span>);
             }
 
-            if (obj.italic) {
+            if (obj?.italic) {
                 modifiedText = (<span key={index} className='italic'>{text}</span>);
             }
 
-            if (obj.underline) {
+            if (obj?.underline) {
                 modifiedText = (<u key={index}>{text}</u>);
             }
-            if (obj.href) {
+            if (obj?.href) {
                 modifiedText = (<a key={index} href={obj.href} className='underline text-blue-900 hover:text-blue-200' >{text}</a>);
             }
         }
@@ -72,8 +72,8 @@ const PostDetail = ({post}:{post:Post&{content:{raw:{children:[]}}}}) => {
             </div>
           </div>
           <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
-          {post.content.raw.children.map((typeObj, index) => {
-            const children = typeObj.children.map((item, itemindex) => 
+          {post.content.raw.children.map((typeObj:{bold?:any,italic?:any,underline?:any,href?:any,title?:any,height?:any,width?:any,src?:any,children?:[],type:any}, index) => {
+            const children:any = typeObj.children.map((item:{href?:any,children?:{text?:any}[],text?:any}, itemindex) => 
             {  
                 // console.log(Object.keys(item),"text", item)
                 // console.log("return  ",getContentFragment(itemindex, item.text, item))
